@@ -1,0 +1,22 @@
+.main{
+    display: flex;
+}
+
+.main div{
+    display: flex;
+    width: 40rem;
+    height: 50rem;
+    font-size: 70pt;
+    align-items: center;
+    font-family: monospace;
+}
+
+.left{
+    justify-content: end;
+    padding-right: 2rem;
+}
+.right{
+    padding-left: 2rem;
+    background: black;
+    color: white;
+}

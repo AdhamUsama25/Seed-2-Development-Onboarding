@@ -1,0 +1,45 @@
+* {
+    font-family: "tajawal";
+}
+
+.DD {
+    color: white;
+    background: gray;
+    width: 21rem;
+    height: 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 15pt;
+    font-weight: bolder;
+}
+
+
+
+ul {
+    visibility: hidden;
+    margin: 0px;
+    padding-left: 0px;
+}
+
+
+
+li {
+    text-decoration: none;
+    list-style-type: none;
+    background: #eee;
+    width: 20rem;
+    height: 2rem;
+    padding-top: 1rem;
+    padding-left: 1rem;
+}
+
+.DD:hover{
+    background: black;
+    cursor: pointer;
+}
+
+.DD:hover + ul{
+    visibility: visible;
+}
+

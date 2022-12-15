@@ -1,0 +1,21 @@
+body {
+    display: flex;
+    justify-content: center;
+
+}
+
+button {
+    margin-top: 20em;
+    background-color: dodgerblue;
+    border: none;
+    border-radius: 50px;
+    height: 5rem;
+    width: 20rem;
+    color: white;
+    font-size: 15pt;
+    box-shadow: lightgray 0px 5px 10px;
+}
+
+button:active {
+    box-shadow: none;
+}

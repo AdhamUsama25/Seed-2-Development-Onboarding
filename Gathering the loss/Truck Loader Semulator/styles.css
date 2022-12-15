@@ -1,0 +1,100 @@
+* {
+    font-family: Arial;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.head {
+    text-align: center;
+    font-size: 75pt;
+}
+
+#trucks {
+    margin-top: 10rem;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+
+}
+
+.truck {
+    margin: 1rem;
+}
+
+.label {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #ffd500;
+    width: 15rem;
+    height: 5rem;
+    border-radius: 25px;
+    font-weight: bolder;
+    font-size: 20pt;
+    box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.3);
+    transition-duration: 0.5s;
+    overflow: hidden;
+}
+
+.label h3 {
+    margin: 25px;
+}
+
+.data {
+    visibility: hidden;
+    list-style-type: none;
+    font-size: 15pt;
+}
+
+.label:hover + .data {
+    visibility: visible;
+}
+
+.actions {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 60%;
+}
+
+.actions form{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+form .btns{
+    justify-content: center;
+}
+
+.inputs {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.inputs input{
+    margin-bottom: 10px;
+    height: 30px;
+    outline: none;
+    border-radius: 10px;
+}
+
+.btns{
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.btns button {
+    width: 6rem;
+}
+
+.history{
+    background-color: #ffd50080;
+    width: 40rem;
+    text-align: center;
+    border-radius: 25px;
+}

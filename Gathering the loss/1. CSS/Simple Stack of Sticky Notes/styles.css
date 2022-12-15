@@ -1,0 +1,37 @@
+.main {
+
+}
+
+.main div {
+    color: white;
+    width: 10rem;
+    height: 10rem;
+    display: flex;
+    margin-bottom: -5rem;
+    font-size: 15pt;
+}
+
+#d2{
+    margin-left: 5rem;
+}
+
+#d3{
+    margin-left: 10rem;
+}
+
+#d4{
+    margin-left: 15rem;
+}
+
+#d5{
+    margin-left: 20rem;
+}
+
+
+.black {
+    background: black;
+}
+
+.gray {
+    background: gray;
+}

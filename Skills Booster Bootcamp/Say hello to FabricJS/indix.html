@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="fabric.min.js"></script>
+
+</head>
+<body>
+<h1>Let's Draw</h1>
+<div id="draw">
+    <canvas id="c" width="1000" height="700"></canvas>
+    <div id="ballet">
+        <div class="color" id="red"></div>
+        <div class="color" id="green"></div>
+        <div class="color" id="blue"></div>
+        <div class="color" id="yellow"></div>
+        <div class="color" id="black"></div>
+        <div class="color" id="white"></div>
+    </div>
+</div>
+<div id="shapes">
+    <input id="rect" value="Rectangle" type="button">
+    <input id="cir" value="Circle" type="button">
+    <input id="tri" value="Triangle" type="button">
+</div>
+
+<div id="actions">
+    <input id="del" value="Delete" type="button">
+    <input id="exp" value="Export SVG" type="button">
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
