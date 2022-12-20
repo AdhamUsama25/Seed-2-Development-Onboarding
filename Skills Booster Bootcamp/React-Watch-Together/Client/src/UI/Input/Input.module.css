@@ -1,0 +1,17 @@
+input {
+    width: 25rem;
+    padding: 1rem 3rem;
+    outline: none;
+    border: lightgray 2px solid;
+    border-radius: 30px;
+    font-size: 25pt;
+    color: gray;
+    text-align: center;
+    margin-top: 0rem;
+    margin-bottom: 2rem;
+}
+
+
+input::placeholder {
+    color: lightgray;
+}
