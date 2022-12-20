@@ -1,20 +1,17 @@
 import styles from './Video.module.css'
 
 const Video = props => {
-    return (
-        <iframe
-            width={props.width} height={props.height}
-            src={props.src}
-            frameBorder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowFullScreen
-        >
-        </iframe>)
 
-        // <iframe width="1268" height="713" src="https://www.youtube.com/embed/u4T6zomBPEk"
-        //         title="تلاوة خاشعة لعشر سور [ يس،الصافات،الأحقاف،النجم،القمر،الحديد،الملك،الحاقة،النبأ،النازعات ] حسن صالح"
-        //         frameBorder="0"
-        //         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        //         allowFullScreen></iframe>)
+    // console.log(props.onPlay)
+    return (
+        <video
+            onCanPlay={props.onCanPlay}
+            onPlay={props.onPlay}
+            onPause={props.onPause}
+            width="1200" height="600"
+            src={props.src}
+            controls={props.controls}
+        >
+        </video>)
 }
 export default Video

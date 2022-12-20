@@ -18,6 +18,31 @@ io.on('connection', (socket) => {
     socket.on('join-room', (data) => {
         socket.join(data.roomId)
     })
+
+    socket.on('video-ready', (data) => {
+        socket.to(data.room).emit('start-video', {
+            src: data.src,
+            status: data.status
+        })
+    })
+
+    socket.on('play-video', (data) => {
+        const status = data.status
+        console.log('video is playing')
+
+        socket.to(data.room).emit('play-video', {
+            status: data.status,
+            src: data.src
+        })
+    })
+
+    socket.on('pause-video', (data) => {
+        const status = data.status
+        console.log(status)
+        console.log(data.room)
+        console.log('video is paused')
+        socket.to(data.room).emit('pause-video', status)
+    })
 })
 
 

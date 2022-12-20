@@ -15,9 +15,9 @@ function App() {
         <BrowserRouter>
             <Routes>
                 <Route path='/' element={<Main socket={socket}/>}/>
-                <Route path='/:room' element={<Room/>}/>
-                <Route path='/:room/broadcaster' element={<Broadcaster/>}/>
-                <Route path='/:room/watcher' element={<Watcher/>}/>
+                <Route path='/:room' element={<Room socket={socket}/>}/>
+                <Route path='/:room/broadcaster' element={<Broadcaster socket={socket}/>}/>
+                <Route path='/:room/watcher' element={<Watcher socket={socket}/>}/>
             </Routes>
         </BrowserRouter>
     )
