@@ -1,44 +1,42 @@
 import styles from './Broadcaster.module.css'
-import Video from "../../../components/Video.jsx";
 import {useParams} from "react-router-dom";
-import {useEffect} from "react";
+import {useState} from "react";
 
 const Broadcaster = props => {
+    const [currentTime, setCurrentTime] = useState()
+    const [startTime, setStartTime] = useState()
 
 
     const params = useParams()
     const {room} = params
 
-    const source = 'https://rr3---sn-hpa7znz6.googlevideo.com/videoplayback?expire=1671556010&ei=SpehY_maI5r6WZvZkNgK&ip=193.56.252.13&id=o-AIt3xaBRcTdSdzOo9pwFsKYJbLw5X_nOIUpZVjEsmVpw&itag=401&aitags=133%2C134%2C135%2C136%2C137%2C160%2C242%2C243%2C244%2C247%2C248%2C271%2C278%2C313%2C394%2C395%2C396%2C397%2C398%2C399%2C400%2C401&source=youtube&requiressl=yes&spc=zIddbIu_oWkK2cqNy3P0OXlmPR9npOg&vprv=1&mime=video%2Fmp4&ns=YySjtnAqDyZCvUvWGSPEtgkK&gir=yes&clen=8872896607&dur=9248.655&lmt=1671367707390118&keepalive=yes&fexp=24001373,24007246&c=WEB&txp=5532434&n=BUJrxc2lQq1cdQ&sparams=expire%2Cei%2Cip%2Cid%2Caitags%2Csource%2Crequiressl%2Cspc%2Cvprv%2Cmime%2Cns%2Cgir%2Cclen%2Cdur%2Clmt&sig=AOq0QJ8wRQIgTF1iRbuM7p-680Z_bkCrOkmIL6Kvp7Q5jTWL3d8S-LoCIQCSzgSHsHbKiJJPuo29-Zsvoig0U2ocZDgMSFb3YFp_5g%3D%3D&rm=sn-4g5ey77s&req_id=8ef2222c5932a3ee&redirect_counter=2&cm2rm=sn-uxaxjvhxbt2u-j5pld7s&cms_redirect=yes&cmsv=e&ipbypass=yes&mh=Pf&mip=41.43.167.122&mm=29&mn=sn-hpa7znz6&ms=rdu&mt=1671545381&mv=m&mvi=3&pl=22&lsparams=ipbypass,mh,mip,mm,mn,ms,mv,mvi,pl&lsig=AG3C_xAwRQIgeDxxluEIG7nwJ1JCgG_mo9b4BsBkkJ4bkRQ4seRcfQwCIQCVjhmtOj6tBeVReKgZClqTA6_3bN2lzcM2lEuStlzyrg%3D%3D'
+    const source = 'https://rr1---sn-a5meknsd.googlevideo.com/videoplayback?expire=1671643756&ei=DO6iY4vSG_qRsfIPva-msAY&ip=64.145.94.124&id=o-AFPehitO01IohoSBsBDPoQPBLOAGtJ8cOXjyNUj7kfv3&itag=22&source=youtube&requiressl=yes&mh=tm&mm=31%2C26&mn=sn-a5meknsd%2Csn-n4v7sns7&ms=au%2Conr&mv=m&mvi=1&pl=24&initcwndbps=1186250&spc=zIddbHkQj2y1fc2AzBv39i2TMHswfzI&vprv=1&mime=video%2Fmp4&ns=n2fIvlqW9IVuMLE7wwwvPucK&cnr=14&ratebypass=yes&dur=1431.347&lmt=1669380030705886&mt=1671622127&fvip=5&fexp=24001373%2C24007246&c=WEB&txp=5532434&n=Mbaa6TF3p2rusg&sparams=expire%2Cei%2Cip%2Cid%2Citag%2Csource%2Crequiressl%2Cspc%2Cvprv%2Cmime%2Cns%2Ccnr%2Cratebypass%2Cdur%2Clmt&sig=AOq0QJ8wRgIhAOgk_D2rbw7CH75KBDZ2FsXCb0cbP8H43MpNHeBXcouOAiEAi5tuCV1mLGTH-86vCHFmDyCO2JhI4TTrFk7AuLi2Uco%3D&lsparams=mh%2Cmm%2Cmn%2Cms%2Cmv%2Cmvi%2Cpl%2Cinitcwndbps&lsig=AG3C_xAwRgIhAPJoBvK75gLZoFv81-0MTn5-DEItIjS5ffXfvbJ-1eNeAiEAhawJGwd5wGinzF_9PzDOUwkpACrZszeNVOVSj3rQpUw%3D&title=%D8%A7%D9%84%D8%AF%D8%AD%D9%8A%D8%AD%20%7C%20%D9%82%D8%B5%D8%A9%20%D9%81%D9%88%D8%B1%D8%AF'
 
 
     const onPlayHandler = () => {
         props.socket.emit('play-video', {
-            room: room,
-            status: 'play',
-            src: source
+            room: room
         })
     }
 
     const onPauseHandler = () => {
         props.socket.emit('pause-video', {
-            room: room,
-            status: 'pause'
+            room: room
         })
     }
+
 
     return (
         <div className={styles.container}>
             <h1>Show The World</h1>
 
-            <Video
+            <video
                 onPlay={onPlayHandler}
                 onPause={onPauseHandler}
                 src={source}
                 controls={true}
-                frameBorder="0"
             >
-            </Video>
+            </video>
 
         </div>
     )
