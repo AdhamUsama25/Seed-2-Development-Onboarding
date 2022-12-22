@@ -29,6 +29,10 @@ io.on('connection', (socket) => {
     socket.on('pause-video', (data) => {
         socket.to(data.room).emit('pause')
     })
+
+    // socket.on('seeked', (data) => {
+    //     socket.to(data.room).emit('seek', {currentTime: data.currentTime})
+    // })
 })
 
 
