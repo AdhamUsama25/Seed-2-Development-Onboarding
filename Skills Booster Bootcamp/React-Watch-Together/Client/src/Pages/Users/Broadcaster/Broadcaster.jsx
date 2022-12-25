@@ -5,7 +5,7 @@ import theVideo from '../../../assets/👈 شاهد ركلات الترجيح ب
 
 const Broadcaster = props => {
 
-    // const myVideo = useRef()
+    const myVideo = useRef(null)
 
 
     const params = useParams()
@@ -25,12 +25,15 @@ const Broadcaster = props => {
             room: room
         })
     }
-    // const seeker = (event) => {
-    //     props.socket.emit('seeked', {
-    //         room: room,
-    //         currentTime: myVideo.current.time
-    //     })
-    // }
+
+    const seeker = () => {
+        props.socket.emit('seeked', {
+            room: room,
+            currentTime: myVideo.current.currentTime
+        })
+
+        console.log(myVideo.current.currentTime)
+    }
 
 
     return (
@@ -38,8 +41,8 @@ const Broadcaster = props => {
             <h1>Show The World</h1>
 
             <video
-                // ref={myVideo}
-                // onSeeked={seeker}
+                ref={myVideo}
+                onSeeked={seeker}
                 onPlay={onPlayHandler}
                 onPause={onPauseHandler}
                 src={source}

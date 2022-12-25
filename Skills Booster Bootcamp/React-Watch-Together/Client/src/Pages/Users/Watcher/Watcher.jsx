@@ -1,30 +1,34 @@
 import theVideo from '../../../assets/👈 شاهد ركلات الترجيح بين الأرجنتين وفرنسا في نهائي كأس العالم.mp4'
-// import {useRef} from "react";
+import {useEffect, useRef} from "react";
 
 const Watcher = props => {
-    // const myVideo = useRef()
+    const myVideo = useRef(null)
 
 
     const source = theVideo
 
-    props.socket.on('play', () => {
-        document.querySelector('video').play()
-    })
+    useEffect(() => {
+        props.socket.on('play', () => {
+            myVideo.current.play()
+        })
 
-    props.socket.on('pause', () => {
-        document.querySelector('video').pause()
+        props.socket.on('pause', () => {
+            myVideo.current.pause()
 
-    })
+        })
 
-    // props.socket.on('seek', (data) => {
-    //     myVideo.current.currentTime = data.currentTime
-    // })
+        props.socket.on('seek', (data) => {
+            console.log(data)
+            myVideo.current.currentTime = data.currentTime
+        })
+    }, [props.socket])
+
 
     return (
         <>
             <h1>Have Fun</h1>
             <video
-                // ref={myVideo}
+                ref={myVideo}
                 width='1200'
                 height='600'
                 src={source}
